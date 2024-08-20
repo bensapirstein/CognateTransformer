@@ -113,7 +113,7 @@ def compute_metrics_proto(eval_preds, tokenizer):
     decoded_labels = [clean_decodes_sig(x) for x in decoded_labels]
     proto_map = {'Burmish':'ProtoBurmish', 'Purus':'ProtoPurus',
             'Lalo':'ProtoLalo', 'Bai':'ProtoBai', 'Karen':'ProtoKaren',
-            'Romance':'Latin'}  
+            'Romance':'Latin', "Semitic":"ps"}
     languages = {}
     lngs = [val for key,val in proto_map.items()]
     count = 0
@@ -179,7 +179,7 @@ def compute_metrics_nmt(eval_preds, raw_data, tokenizer):
     
     languages = {}
     valid = ['ProtoBurmish', 'ProtoPurus', 'ProtoLalo',\
-             'ProtoBai', 'ProtoKaren', 'Latin']
+             'ProtoBai', 'ProtoKaren', 'Latin', 'ps']
 
     for x,y,lng in zip(decoded_preds, decoded_labels, lngs):
         if lng not in valid:

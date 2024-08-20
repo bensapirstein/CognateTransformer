@@ -304,7 +304,7 @@ def load_proto_data():
 
     proto_map = {'Burmish':'ProtoBurmish', 'Purus':'ProtoPurus',
                 'Lalo':'ProtoLalo', 'Bai':'ProtoBai', 'Karen':'ProtoKaren',
-                'Romance':'Latin'}
+                'Romance':'Latin', 'Semitic':'ps'}
     for f in tqdm(files):
         df = pd.read_csv(f, sep='\t')
         df.fillna('-', inplace=True)
@@ -423,8 +423,8 @@ def load_nmt_data():
             data[f"finetune_test_{prop}_{valid}"] = {'data':[], 'solns':[]}
             data[f"finetune_dev_{prop}_{valid}"] = {'data':[], 'solns':[]}
     proto_map = {'Burmish':'ProtoBurmish', 'Purus':'ProtoPurus',
-             'Lalo':'ProtoLalo', 'Bai':'ProtoBai', 'Karen':'ProtoKaren',
-             'Romance':'Latin'}
+                'Lalo':'ProtoLalo', 'Bai':'ProtoBai', 'Karen':'ProtoKaren',
+                'Romance':'Latin', 'Semitic':'ps'}
     
     for prop in ['0.1','0.5', '0.8']:
     
