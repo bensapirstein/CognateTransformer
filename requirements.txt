@@ -1,6 +1,6 @@
 torch==1.12.0
 transformers==4.24.0
-tokenizers==0.11.4
+tokenizers
 datasets==2.13.0
 fair-esm==2.0.0
 lingpy==2.6.13
